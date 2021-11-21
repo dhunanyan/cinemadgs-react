@@ -14,7 +14,7 @@ export const Card = ({ movie }) => (
     <div className="card__content">
       <h2 className="card__subtitle subtitle">
         {" "}
-        {movie.name.length > 20 ? `${movie.name.slice(0, 20)}...` : movie.name}
+        {movie.name.length > 18 ? `${movie.name.slice(0, 18)}...` : movie.name}
       </h2>
       <p className="card__descr descr">
         {movie.description.length > 120
