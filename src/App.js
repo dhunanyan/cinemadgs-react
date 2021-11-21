@@ -23,11 +23,9 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter basename={process.env.PUBLIC_URL}>
-        <Routes>
-          <Route path="/movies" element={<Movies />} />
-        </Routes>
-      </HashRouter>
+      <Routes>
+        <Route path="/movies" element={<Movies />} />
+      </Routes>
     );
   }
 }
