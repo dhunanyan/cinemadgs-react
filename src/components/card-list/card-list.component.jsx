@@ -21,7 +21,7 @@ const CardCarousel = ({ movies, genres, sliderGenre }) => {
       {movies.map((movie) =>
         movie.genres.map((movieGenre) =>
           movieGenre === sliderGenre ? (
-            <Card key={movie.roomID} movie={movie} />
+            <Card key={movie.roomID} movie={movie} date={movie.date} />
           ) : (
             false
           )

@@ -2,7 +2,7 @@ import React from "react";
 
 import "./card.styles.scss";
 
-export const Card = ({ movie }) => (
+export const Card = ({ movie, date }) => (
   <div
     class="card"
     style={{
@@ -21,12 +21,15 @@ export const Card = ({ movie }) => (
           ? `${movie.description.slice(0, 120)}...`
           : movie.description}
       </p>
-      <button
-        className="card__btn"
-        style={{ transition: "all 350ms ease-out" }}
-      >
-        Reserve
-      </button>
+      <div className="card__btns">
+        <button
+          className="card__btn"
+          style={{ transition: "all 350ms ease-out" }}
+        >
+          Reserve
+        </button>
+        <p className="card__date">{date}</p>
+      </div>
     </div>
   </div>
 );

@@ -325,7 +325,7 @@ class Movies extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container card-carousel">
         {this.state.genres.map((genre) => (
           <div className="card-carousel__container">
             <div className="card-carousel__genre">
@@ -337,7 +337,10 @@ class Movies extends Component {
               movies={this.state.movies}
             ></CardCarousel>
           </div>
-        ))}
+        ))}{" "}
+        <div className="card-carousel__genre card-carousel__genre--1">
+          <h2 className="card-carousel__title card-carousel__title--1">.</h2>
+        </div>
       </div>
     );
   }

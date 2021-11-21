@@ -1,8 +1,8 @@
 .card {
   color: #303030;
   padding: 10rem 0 0;
-  margin: 15px;
-  min-width: 300px;
+  margin: 0;
+  width: 300px;
   height: 140px;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -10,9 +10,9 @@
   transition: transform 500ms ease-out;
 
   &__content {
-    min-height: 260px;
+    height: 272px;
     --padding: 1.5rem;
-    padding: var(--padding);
+    padding: 10px;
     background: linear-gradient(
       rgba(255, 255, 255, 0),
       rgba(226, 226, 226, 0.5) 2%,
@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transform: translateY(0%);
+    transform: translateY(10%);
     transition: transform 450ms ease;
   }
 
@@ -49,6 +49,12 @@
     margin: 0 0 15px 0;
   }
 
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__btn {
     cursor: pointer;
     text-decoration: none;
@@ -59,13 +65,32 @@
     border-radius: 0.25em;
     font-weight: 500;
     margin: auto auto 0 0;
-    transition: all 350ms ease-out;
 
     &:hover,
     &:focus {
       background-color: #303030;
       color: #ffcc57;
+
+      & + .card__date {
+        color: #303030;
+        background-color: #ffcc57;
+      }
     }
+  }
+
+  &__date {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffcc57;
+    background-color: #303030;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 0.25em;
+    font-weight: 500;
+    margin: auto 0 0 auto;
+    width: min-width;
+    border: 3px solid #303030;
+    transition: all 350ms ease-out;
   }
 
   &__content > *:not(.card__subtitle) {
@@ -85,7 +110,7 @@
     }
 
     .card__content {
-      transform: translateY(-54%);
+      transform: translateY(-57%);
       transition-delay: 100ms;
     }
 

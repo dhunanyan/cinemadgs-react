@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   max-width: 1400px;
-  margin: 50px auto;
   align-items: center;
 }
 
@@ -15,8 +14,9 @@
   overflow: hidden;
 }
 
-.rec-carousel-item {
-  min-height: 100%;
+.rec.rec-carousel-item {
+  max-height: 300px;
+  margin: 0;
 }
 
 .rec.rec-arrow:disabled {
