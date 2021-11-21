@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Movies from "./pages/movies/movies.jsx";
