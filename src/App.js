@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Movies from "./pages/movies/movies.jsx";
@@ -23,11 +23,11 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/movies" element={<Movies />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
