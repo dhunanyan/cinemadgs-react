@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path="/movies" element={<Movies />} />
+          <Route path="/cinemadgs-react/movies" element={<Movies />} />
         </Routes>
       </BrowserRouter>
     );
