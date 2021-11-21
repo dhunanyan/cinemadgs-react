@@ -2,16 +2,31 @@ import React from "react";
 
 import "./card.styles.scss";
 
-export const Card = (props) => (
-  <div className="card__container">
-    <div className="card__img">
-      <img alt="Movie" src={props.movie.image} />
+export const Card = ({ movie }) => (
+  <div
+    class="card"
+    style={{
+      backgroundImage: `url('${movie.image}')`,
+      backgroundPosition: "bottom center",
+      backgroundSize: "cover",
+    }}
+  >
+    <div className="card__content">
+      <h2 className="card__subtitle subtitle">
+        {" "}
+        {movie.name.length > 20 ? `${movie.name.slice(0, 20)}...` : movie.name}
+      </h2>
+      <p className="card__descr descr">
+        {movie.description.length > 120
+          ? `${movie.description.slice(0, 120)}...`
+          : movie.description}
+      </p>
+      <button
+        className="card__btn"
+        style={{ transition: "all 350ms ease-out" }}
+      >
+        Reserve
+      </button>
     </div>
-    <h2>
-      {props.movie.name.length > 26
-        ? `${props.movie.name.slice(0, 26)}...`
-        : props.movie.name}
-    </h2>
-    <p> {props.movie.description}</p>
   </div>
 );

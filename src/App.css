@@ -10,6 +10,11 @@
   align-items: center;
 }
 
+.rec.rec-slider-container {
+  margin: 0 0px;
+  overflow: hidden;
+}
+
 .rec-carousel-item {
   min-height: 100%;
 }
@@ -22,8 +27,7 @@
   border-radius: 0;
   position: absolute;
   z-index: 10;
-  background-color: rgba(103, 58, 183, 0.1);
-  border-radius: 50%;
+  background-color: rgba(255, 205, 87, 0.3);
 }
 
 .rec.rec-arrow:hover:enabled,
@@ -64,3 +68,5 @@
   background-color: #95dada;
   box-shadow: 0 0 1px 3px #95dada;
 }
+
+/*********************************************************************/
