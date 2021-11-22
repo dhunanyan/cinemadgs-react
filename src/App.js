@@ -4,8 +4,11 @@ import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import "./styles/GlobalStyles.scss";
+
+import Navbar from "./components/navbar/navbar.component";
 import Movies from "./pages/movies/movies.jsx";
 import Employees from "./pages/employees/employees.jsx";
+
 // import Home from "./pages/home.jsx";
 // import Login from "./pages/login.jsx";
 // import Signup from "./pages/signup.jsx";
@@ -25,10 +28,13 @@ class App extends Component {
 
   render() {
     return (
-      <Routes>
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/employees" element={<Employees />} />
-      </Routes>
+      <>
+        <Navbar />
+        <Routes>
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/employees" element={<Employees />} />
+        </Routes>
+      </>
     );
   }
 }
