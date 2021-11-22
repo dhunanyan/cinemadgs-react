@@ -70,9 +70,17 @@ const Employees = () => {
         employeeFirstName: "Bolesław",
         employeeLastName: "Kraszewski",
       },
+
+      {
+        employeeID: 9,
+        employeePosition: "Owner",
+        employeeUsername: "gosiaduda",
+        employeeFirstName: "Gosia",
+        employeeLastName: "Duda",
+      },
     ],
 
-    positions: ["Manager", "Superviser", "Cashier"],
+    positions: ["Owner", "Manager", "Superviser", "Cashier"],
   });
 
   // componentDidMount() {
@@ -84,11 +92,12 @@ const Employees = () => {
   return (
     <div className="eployees">
       <div className="container employees__container">
-        {state.positions.map((position) => (
-          <div className="employees__subcontainer">
+        {state.positions.map((position, i) => (
+          <div
+            className={`employees__subcontainer employees__subcontainer--${position}`}
+          >
             <EmployeesAccordion
               accordionPosition={position}
-              positions={state.positions}
               employees={state.employees}
             />
           </div>

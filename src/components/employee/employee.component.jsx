@@ -15,17 +15,20 @@ const EmployeesAccordion = ({ employees, accordionPosition }) => {
   };
 
   return (
-    <div className="employees__accordion">
+    <div
+      className={`employees__accordion--${accordionPosition} employees__accordion`}
+    >
       <div className="employees__position">
         <h2 className="employees__title">{accordionPosition}s</h2>
       </div>
       {employees.map((employee, i) =>
         employee.employeePosition === accordionPosition ? (
           <div
+            key={i}
             className={`employees__${employee.employeeUsername} employees__employee`}
           >
             <div className="employees__content" onClick={() => toggle(i)}>
-              <h2 className="epmloyees__subtitle">
+              <h2 className="employees__subtitle">
                 {employee.employeeUsername}
               </h2>
 
@@ -36,15 +39,33 @@ const EmployeesAccordion = ({ employees, accordionPosition }) => {
             <div
               className={
                 selectedAccordion === i
-                  ? " employees__buttons employees__buttons--show"
-                  : "employees__buttons"
+                  ? " employees__details employees__details--show"
+                  : "employees__details"
               }
             >
-              <p className="employees__descr">
-                loremlorem loremlo remloremlo remloremlo remloremlor
-                emloremlorem l oremloremloreml emlorem loremloreml
-                oremloremloremloremloremloremlor
-              </p>
+              <div className="employees__line employees__line--yellow" />
+              <div className="employees__line" />
+              <div className="employees__descrs">
+                <p className="employees__descr">
+                  <span>First Name: </span>
+                  {employee.employeeFirstName}
+                </p>
+                <p className="employees__descr">
+                  <span>Last Name: </span>
+                  {employee.employeeLastName}
+                </p>
+                <p className="employees__descr">
+                  <span>E-mail: </span>
+                  {`${employee.employeeFirstName.toLowerCase()}.${employee.employeeLastName.toLowerCase()}@gmail.com`}
+                </p>
+              </div>
+              <div className="employees__line employees__line--yellow" />
+              <div className="employees__line" />
+              <div className="employees__buttons">
+                <button className="employees__button">View Profile</button>
+                <button className="employees__button">Promote</button>
+                <button className="employees__button">Fire</button>
+              </div>
             </div>
           </div>
         ) : (

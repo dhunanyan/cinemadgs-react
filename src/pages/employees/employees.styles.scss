@@ -1,23 +1,33 @@
 .employees {
   &__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     width: 100%;
-    align-items: flex-start;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "owner owner owner"
+      "manager superviser chasier";
+    align-items: start;
+    gap: 10px;
   }
 
   &__subcontainer {
-    padding: 110px 0 50px;
-  }
+    &--Owner {
+      grid-area: owner;
+    }
 
-  &__accordion {
-    max-width: 500px;
-    margin: 0 10px 0 10px;
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    padding: 0 0 0;
+    &--Manager {
+      grid-area: manager;
+    }
+
+    &--Superviser {
+      grid-area: superviser;
+    }
+
+    &--Cashier {
+      grid-area: chasier;
+    }
   }
 
   &__position {
