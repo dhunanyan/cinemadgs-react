@@ -7,9 +7,7 @@ import { SidebarData } from "../sidebar-data/side-bar.component";
 
 import "./navbar.styles.scss";
 
-// import "./header.styles.scss";
 import Logo from "../../assets/logo.png";
-import { IconContext } from "react-icons/lib";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -18,14 +16,9 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__navbar">
-        <div className="header__container">
-          <Link to="#">
-            <AiIcons.AiOutlineBars
-              className="menu__bars"
-              onClick={showSidebar}
-            />
-          </Link>
-        </div>
+        <Link to="#">
+          <AiIcons.AiOutlineBars className="menu__bars" onClick={showSidebar} />
+        </Link>
       </div>
       <nav
         className={
@@ -48,6 +41,11 @@ const Header = () => {
               </li>
             );
           })}
+          <li className="menu__text">
+            <div className="menu__link menu__link--disable">
+              <img src={Logo} alt="Logo" />
+            </div>
+          </li>
         </ul>
       </nav>
     </header>

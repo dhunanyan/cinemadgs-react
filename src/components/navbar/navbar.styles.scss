@@ -14,12 +14,6 @@
     z-index: 99998;
     pointer-events: none;
   }
-
-  &__container {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-  }
 }
 
 .menu {
@@ -60,13 +54,18 @@
     font-weight: 900;
     transition: 350ms all ease-out;
 
-    &:hover {
+    &:hover:not(.menu__link--disable) {
       background-color: #f0ebe1;
       color: #303030;
 
       .menu__icon {
         color: #303030;
       }
+    }
+
+    img {
+      width: 100%;
+      border-radius: 4px;
     }
   }
 
@@ -97,7 +96,7 @@
   &__bars {
     font-size: 44px;
     background: none;
-    margin: 0 auto 0 0px;
+    margin: 0 auto 0 25px;
     color: #ffcc57;
     pointer-events: all;
 
