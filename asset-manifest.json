@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/cinemadgs-react/static/css/main.9c0e081f.chunk.css",
-    "main.js": "/cinemadgs-react/static/js/main.11f08142.chunk.js",
-    "main.js.map": "/cinemadgs-react/static/js/main.11f08142.chunk.js.map",
+    "main.css": "/cinemadgs-react/static/css/main.a4c5e72f.chunk.css",
+    "main.js": "/cinemadgs-react/static/js/main.795959fe.chunk.js",
+    "main.js.map": "/cinemadgs-react/static/js/main.795959fe.chunk.js.map",
     "runtime-main.js": "/cinemadgs-react/static/js/runtime-main.b0c5fc45.js",
     "runtime-main.js.map": "/cinemadgs-react/static/js/runtime-main.b0c5fc45.js.map",
-    "static/js/2.986f9ae1.chunk.js": "/cinemadgs-react/static/js/2.986f9ae1.chunk.js",
-    "static/js/2.986f9ae1.chunk.js.map": "/cinemadgs-react/static/js/2.986f9ae1.chunk.js.map",
+    "static/js/2.5c7f4d5b.chunk.js": "/cinemadgs-react/static/js/2.5c7f4d5b.chunk.js",
+    "static/js/2.5c7f4d5b.chunk.js.map": "/cinemadgs-react/static/js/2.5c7f4d5b.chunk.js.map",
     "index.html": "/cinemadgs-react/index.html",
-    "static/css/main.9c0e081f.chunk.css.map": "/cinemadgs-react/static/css/main.9c0e081f.chunk.css.map",
-    "static/js/2.986f9ae1.chunk.js.LICENSE.txt": "/cinemadgs-react/static/js/2.986f9ae1.chunk.js.LICENSE.txt"
+    "static/css/main.a4c5e72f.chunk.css.map": "/cinemadgs-react/static/css/main.a4c5e72f.chunk.css.map",
+    "static/js/2.5c7f4d5b.chunk.js.LICENSE.txt": "/cinemadgs-react/static/js/2.5c7f4d5b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b0c5fc45.js",
-    "static/js/2.986f9ae1.chunk.js",
-    "static/css/main.9c0e081f.chunk.css",
-    "static/js/main.11f08142.chunk.js"
+    "static/js/2.5c7f4d5b.chunk.js",
+    "static/css/main.a4c5e72f.chunk.css",
+    "static/js/main.795959fe.chunk.js"
   ]
 }
