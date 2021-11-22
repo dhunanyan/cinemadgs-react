@@ -1,0 +1,33 @@
+.employees {
+  &__employee {
+    background-color: #f0ebe1;
+    margin: 0 0 5px 0;
+    padding: 10px 20px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__subtitle {
+    color: #85662b;
+  }
+
+  &__buttons {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 350ms linear;
+
+    &--show {
+      max-height: 200px;
+      height: auto;
+    }
+  }
+}

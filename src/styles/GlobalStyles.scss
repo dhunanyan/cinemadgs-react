@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/*********************************************************************/
+
+.rec {
+  .rec-carousel {
+    position: relative;
+  }
+
+  &.rec-slider-container {
+    margin: 0 0px;
+    overflow: hidden;
+  }
+
+  .rec-pagination {
+    position: absolute;
+    bottom: 7px;
+  }
+
+  &.rec-carousel-item {
+    max-height: 300px;
+    margin: 0;
+  }
+
+  &.rec-arrow {
+    border-radius: 0;
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(255, 205, 87, 0.3);
+
+    &:hover:enabled,
+    &:focus:enabled {
+      background-color: #ffcc57;
+    }
+
+    &:disabled {
+      visibility: hidden;
+    }
+
+    &-left {
+      left: 0;
+    }
+
+    &-right {
+      right: 0;
+    }
+  }
+
+  &.rec-dot {
+    margin: 0 20px;
+    background-color: #f1f1f1;
+    display: none;
+
+    &.rec-dot_active {
+      margin: 0 20px;
+      background-color: #95dada;
+      box-shadow: 0 0 1px 3px #95dada;
+    }
+  }
+}

@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import CardCarousel from "../../components/card-list/card-list.component";
 
 import "./movies.styles.scss";
+import "../../styles/GlobalStyles.scss";
 
 class Movies extends Component {
   constructor() {
     super();
 
     this.state = {
-      monsters: [],
       movies: [
         {
           id: "786621",
@@ -323,6 +323,10 @@ class Movies extends Component {
   //     .then((users) => this.setState({ monsters: users }));
   // }
 
+  updateMovies(newMovies) {
+    this.setState({ movies: newMovies });
+  }
+
   render() {
     return (
       <div className="container card-carousel">
@@ -332,6 +336,7 @@ class Movies extends Component {
               <h2 className="card-carousel__title">{genre}</h2>
             </div>
             <CardCarousel
+              onUpdate={this.updateMovies}
               sliderGenre={genre}
               genres={this.state.genres}
               movies={this.state.movies}

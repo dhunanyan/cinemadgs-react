@@ -3,7 +3,9 @@ import React, { Component } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
+import "./styles/GlobalStyles.scss";
 import Movies from "./pages/movies/movies.jsx";
+import Employees from "./pages/employees/employees.jsx";
 // import Home from "./pages/home.jsx";
 // import Login from "./pages/login.jsx";
 // import Signup from "./pages/signup.jsx";
@@ -25,6 +27,7 @@ class App extends Component {
     return (
       <Routes>
         <Route path="/movies" element={<Movies />} />
+        <Route path="/employees" element={<Employees />} />
       </Routes>
     );
   }
