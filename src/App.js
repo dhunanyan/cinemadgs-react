@@ -6,7 +6,8 @@ import "./App.css";
 import "./styles/GlobalStyles.scss";
 
 import Navbar from "./components/navbar/navbar.component";
-import Login from "./pages/login/login.component";
+import Login from "./pages/login/login";
+import Signup from "./pages/signup/signup";
 import Movies from "./pages/movies/movies.jsx";
 import Employees from "./pages/employees/employees.jsx";
 
@@ -33,6 +34,7 @@ class App extends Component {
         <Navbar />
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/employees" element={<Employees />} />
         </Routes>

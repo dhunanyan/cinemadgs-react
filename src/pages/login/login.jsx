@@ -10,6 +10,8 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
+import Logo from '../../assets/logo.png'
+
 import "./login.styles.scss";
 
 const FilledInputs = styled(FilledInput)({
@@ -29,7 +31,7 @@ const Login = () => {
 
   const [username, setName] = React.useState("");
 
-  const handleChangeUser = (event) => {
+  const handleChangeUsername = (event) => {
     setName(event.target.value);
   };
 
@@ -51,7 +53,7 @@ const Login = () => {
   return (
     <div className="signup signup--1">
       <div className="signup__container container">
-        <Box
+      <Box
           className="signup__subcontainer"
           component="form"
           sx={{
@@ -64,16 +66,15 @@ const Login = () => {
             Login
           </button>
           <div className="signup__content">
-            <h3 className="signup__title title">Sign in</h3>
+            <div className="signup__img"><img className="signup__logo" src={Logo} alt="Logo"/></div>
             <p className="signup__descr descr">
               watch your favourite movies in CinemaDGS
             </p>
           </div>
           <div className="signup__inputs">
-            <FormControl variant="filled">
+            <FormControl variant="filled" style={{width: "100%"}}>
               <InputLabel
                 style={{
-                  fontSize: "32px",
                   color: "rgba(48, 48, 48, 0.486)",
                 }}
                 htmlFor="username"
@@ -82,24 +83,23 @@ const Login = () => {
               </InputLabel>
               <FilledInput
                 style={{
-                  margin: "10px 0",
+                  margin: "5px 0",
                   width: "100%",
-                  fontSize: "32px",
                   color: "#303030",
                   backgroundColor: "rgba(240, 235, 225, 0.603)",
                 }}
                 id="username"
                 value={username}
-                onChange={handleChangeUser}
+                onChange={handleChangeUsername}
               />
             </FormControl>
+
             <FormControl
               sx={{ width: "100%", maxHeight: "100%" }}
               variant="filled"
             >
               <InputLabel
                 style={{
-                  fontSize: "32px",
                   color: "rgba(48, 48, 48, 0.486)",
                 }}
                 htmlFor="password"
@@ -108,9 +108,8 @@ const Login = () => {
               </InputLabel>
               <FilledInputs
                 style={{
-                  margin: "10px 0",
+                  margin: "5px 0",
                   width: "100%",
-                  fontSize: "32px",
                   color: "#303030",
                   backgroundColor: "rgba(240, 235, 225, 0.603)",
                 }}
@@ -142,14 +141,5 @@ const Login = () => {
     </div>
   );
 };
-
-// <FormControl>
-//         <InputLabel htmlFor="component-outlined">Name</InputLabel>
-//         <OutlinedInput
-//           id="component-outlined"
-//           value={name}
-//           onChange={handleChange}
-//           label="Name"
-//         />
 
 export default Login;
