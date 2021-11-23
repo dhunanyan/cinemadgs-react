@@ -51,7 +51,7 @@ const Login = () => {
   };
 
   return (
-    <div className="signup signup--1">
+    <div className="signup signup--2">
       <div className="signup__container container">
       <Box
           className="signup__subcontainer"
