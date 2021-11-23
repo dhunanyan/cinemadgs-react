@@ -10,8 +10,8 @@ import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
 import Movies from "./pages/movies/movies.jsx";
 import Employees from "./pages/employees/employees.jsx";
+import Home from "./pages/home/home.jsx";
 
-// import Home from "./pages/home.jsx";
 // import Login from "./pages/login.jsx";
 // import Signup from "./pages/signup.jsx";
 // import Repertoire from "./pages/repetoire.jsx";
@@ -25,7 +25,12 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = { isAuth: false };
+  }
+
+  onAuth(value) {
+    console.log(value);
+    this.setState({ isAuth: value });
   }
 
   render() {
@@ -33,7 +38,8 @@ class App extends Component {
       <>
         <Navbar />
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login auth={this.onAuth} />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/employees" element={<Employees />} />
