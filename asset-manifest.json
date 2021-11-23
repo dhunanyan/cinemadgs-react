@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/cinemadgs-react/static/css/main.ed122325.chunk.css",
-    "main.js": "/cinemadgs-react/static/js/main.080d6b8c.chunk.js",
-    "main.js.map": "/cinemadgs-react/static/js/main.080d6b8c.chunk.js.map",
+    "main.css": "/cinemadgs-react/static/css/main.f2631622.chunk.css",
+    "main.js": "/cinemadgs-react/static/js/main.8f1ce2b2.chunk.js",
+    "main.js.map": "/cinemadgs-react/static/js/main.8f1ce2b2.chunk.js.map",
     "runtime-main.js": "/cinemadgs-react/static/js/runtime-main.b0c5fc45.js",
     "runtime-main.js.map": "/cinemadgs-react/static/js/runtime-main.b0c5fc45.js.map",
-    "static/js/2.920af7db.chunk.js": "/cinemadgs-react/static/js/2.920af7db.chunk.js",
-    "static/js/2.920af7db.chunk.js.map": "/cinemadgs-react/static/js/2.920af7db.chunk.js.map",
+    "static/js/2.caafeacb.chunk.js": "/cinemadgs-react/static/js/2.caafeacb.chunk.js",
+    "static/js/2.caafeacb.chunk.js.map": "/cinemadgs-react/static/js/2.caafeacb.chunk.js.map",
     "index.html": "/cinemadgs-react/index.html",
-    "static/css/main.ed122325.chunk.css.map": "/cinemadgs-react/static/css/main.ed122325.chunk.css.map",
-    "static/js/2.920af7db.chunk.js.LICENSE.txt": "/cinemadgs-react/static/js/2.920af7db.chunk.js.LICENSE.txt",
-    "static/media/logo.4f4dba48.png": "/cinemadgs-react/static/media/logo.4f4dba48.png"
+    "static/css/main.f2631622.chunk.css.map": "/cinemadgs-react/static/css/main.f2631622.chunk.css.map",
+    "static/js/2.caafeacb.chunk.js.LICENSE.txt": "/cinemadgs-react/static/js/2.caafeacb.chunk.js.LICENSE.txt",
+    "static/media/logo.4f4dba48.png": "/cinemadgs-react/static/media/logo.4f4dba48.png",
+    "static/media/login.styles.scss": "/cinemadgs-react/static/media/signup.91a80ccb.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b0c5fc45.js",
-    "static/js/2.920af7db.chunk.js",
-    "static/css/main.ed122325.chunk.css",
-    "static/js/main.080d6b8c.chunk.js"
+    "static/js/2.caafeacb.chunk.js",
+    "static/css/main.f2631622.chunk.css",
+    "static/js/main.8f1ce2b2.chunk.js"
   ]
 }
