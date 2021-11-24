@@ -13,19 +13,19 @@
   }
 
   &__subcontainer {
-    &--Owner {
+    &--owner {
       grid-area: owner;
     }
 
-    &--Manager {
+    &--manager {
       grid-area: manager;
     }
 
-    &--Superviser {
+    &--superviser {
       grid-area: superviser;
     }
 
-    &--Cashier {
+    &--cashier {
       grid-area: chasier;
     }
   }

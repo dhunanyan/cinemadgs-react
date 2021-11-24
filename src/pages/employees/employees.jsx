@@ -1,23 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 
 import EmployeesAccordion from "../../components/employee/employee.component";
 
 import "../../styles/GlobalStyles.scss";
 import "./employees.styles.scss";
 
-import employees from "../../api/employees.json";
+// import employees from "../../api/employees.json";
 
 const Employees = () => {
   const [state, setState] = useState({
-    employees,
-    positions: ["Owner", "Manager", "Superviser", "Cashier"],
+    employees: [],
+    positions: ["owner", "manager", "superviser", "cashier"],
   });
 
-  // componentDidMount() {
-  //   fetch("https://jsonplaceholder.typicode.com/users")
-  //     .then((response) => response.json())
-  //     .then((users) => this.setState({ monsters: users }));
-  // }
+  useEffect(() => {
+    const url = "http://127.0.0.1:8000/employees";
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        console.log(json);
+        setState({    employees: json,
+          positions: ["owner", "manager", "superviser", "cashier"]})
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
+    fetchData();
+}, []);
 
   return (
     <div className="eployees">
