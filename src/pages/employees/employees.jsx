@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import EmployeesAccordion from "../../components/employee/employee.component";
 
@@ -13,7 +13,7 @@ const Employees = () => {
     positions: ["owner", "manager", "superviser", "cashier"],
   });
 
-  useEffect(() => {
+  const showEmployees = () => {
     const url = "http://127.0.0.1:8000/employees";
 
     const fetchData = async () => {
@@ -21,15 +21,19 @@ const Employees = () => {
         const response = await fetch(url);
         const json = await response.json();
         console.log(json);
-        setState({    employees: json,
-          positions: ["owner", "manager", "superviser", "cashier"]})
+        setState({
+          employees: json,
+          positions: ["owner", "manager", "superviser", "cashier"],
+        });
       } catch (error) {
         console.log("error", error);
       }
     };
 
     fetchData();
-}, []);
+  };
+
+  useEffect(showEmployees, []);
 
   return (
     <div className="eployees">

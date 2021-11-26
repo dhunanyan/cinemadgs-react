@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "../../styles/GlobalStyles.scss";
 import "./employee.styles.scss";
@@ -62,7 +63,12 @@ const EmployeesAccordion = ({ employees, accordionPosition }) => {
               <div className="employees__line employees__line--yellow" />
               <div className="employees__line" />
               <div className="employees__buttons">
-                <button className="employees__button">View Profile</button>
+                <Link
+                  to={`${employee.employeeID}`}
+                  className="employees__button"
+                >
+                  View Profile
+                </Link>
                 <button className="employees__button">Promote</button>
                 <button className="employees__button">Fire</button>
               </div>

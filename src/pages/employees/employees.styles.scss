@@ -1,15 +1,20 @@
 .employees {
   &__container {
-    width: 100%;
-    padding: 130px 0 50px 0;
+    max-width: 1400px;
+    width: calc(100% - 80px);
+    padding: 130px 30px 50px 30px;
     display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-columns: calc((100% - 20px) / 3) calc((100% - 20px) / 3) calc(
+        (100% - 20px) / 3
+      );
     grid-template-rows: auto auto;
     grid-template-areas:
       "owner owner owner"
       "manager superviser chasier";
     align-items: start;
+
     gap: 10px;
+    margin: 0 auto;
   }
 
   &__subcontainer {
