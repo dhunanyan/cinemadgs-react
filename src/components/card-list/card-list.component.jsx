@@ -37,20 +37,19 @@ const CardCarousel = ({ movies, sliderGenre, onUpdate }) => {
       className="slider slider--horror styling-example"
     >
       {movies.map((movie) =>
-        movie.genres.map((movieGenre) =>
+        movie.movieGenres.map((movieGenre) =>
           movieGenre === sliderGenre ? (
             messageVisibility &&
             currentMovie &&
-            movie.id === currentMovie.id ? (
+            movie.movieID === currentMovie.movieID ? (
               <Message
                 onClose={closeMessage}
                 message={`You have successfully deleted movie with ID:`}
               />
             ) : (
               <Card
-                key={movie.roomID}
+                key={movie.movieRoomID}
                 movie={movie}
-                date={movie.date}
                 onDelete={handleDelete}
               />
             )

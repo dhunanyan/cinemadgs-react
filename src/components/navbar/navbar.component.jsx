@@ -9,10 +9,11 @@ import "./navbar.styles.scss";
 
 import Logo from "../../assets/logo.png";
 
-const Header = () => {
+const Navbar = ({ isAuth }) => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
+  console.log(isAuth.is);
   return (
     <header className="header">
       <div className="header__navbar">
@@ -33,12 +34,18 @@ const Header = () => {
           </li>
           {SidebarData.map((item, index) => {
             return (
-              <li key={index} className={item.cName}>
-                <Link to={item.path} className="menu__link">
-                  {item.icon}
-                  <span>{item.title}</span>
-                </Link>
-              </li>
+              <>
+                {isAuth === item.isAuth || item.title == "Home" ? (
+                  <li key={index} className={item.cName}>
+                    <Link to={item.path} className="menu__link">
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                ) : (
+                  false
+                )}
+              </>
             );
           })}
           <li className="menu__text">
@@ -52,4 +59,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

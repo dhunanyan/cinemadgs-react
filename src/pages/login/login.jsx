@@ -11,40 +11,41 @@ import Logo from "../../assets/logo.png";
 
 import Input from "../../components/input/input.component";
 
-import employee from "../../api/employees.json";
-
 import "./login.styles.scss";
 
-const Login = ({ auth }) => {
+const Login = ({ auth, isAuth }) => {
   const [password, setPassword] = React.useState("");
   const [showPassword, setShowPassword] = React.useState(false);
   const [username, setUsername] = React.useState("");
 
+  //Reading from USERNAME input
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
     console.log(event.target.value);
   };
 
+  //Reading from PASSWORD input
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
     console.log(event.target.value);
   };
 
+  //password or text
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
-
+  //password or text
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
 
   const handleSubmit = async (username, password) => {
     try {
-      // const employee = await fetch("localhost:8001/login", {
-      //   method: "POST",
-      //   body: JSON.stringify({ username, password }),
-      //   headers: { "Content-Type": "application/json" },
-      // });
+      const employee = await fetch("http://127.0.0.1:8000/login", {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+        headers: { "Content-Type": "application/json" },
+      });
       if (true) {
         auth(true);
       }
