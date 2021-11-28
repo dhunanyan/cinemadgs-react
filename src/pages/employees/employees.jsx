@@ -5,8 +5,6 @@ import EmployeesAccordion from "../../components/employee/employee.component";
 import "../../styles/GlobalStyles.scss";
 import "./employees.styles.scss";
 
-// import employees from "../../api/employees.json";
-
 const Employees = () => {
   const [state, setState] = useState({
     employees: [],

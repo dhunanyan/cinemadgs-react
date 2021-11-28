@@ -5,17 +5,23 @@ import "./movies.styles.scss";
 import "../../styles/GlobalStyles.scss";
 
 const Movies = () => {
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([
+    "fantasy",
     "adventure",
     "horror",
     "family",
+    "action",
+    "drama",
     "comedy",
-    "fantastic",
+    "crime",
+    "war",
+    "romance",
+    "anime",
   ]);
 
   const updateMovies = (newMovies) => {
-    this.setState({ movies: newMovies });
+    this.setMovies(newMovies);
   };
 
   const showMovies = () => {
@@ -26,7 +32,7 @@ const Movies = () => {
         const response = await fetch(url);
         const json = await response.json();
         console.log(json);
-        setMovies({ json });
+        setMovies(json);
       } catch (error) {
         console.log("error", error);
       }
@@ -51,7 +57,7 @@ const Movies = () => {
             movies={movies}
           ></CardCarousel>
         </div>
-      ))}{" "}
+      ))}
       <div className="card-carousel__genre card-carousel__genre--1">
         <h2 className="card-carousel__title card-carousel__title--1">.</h2>
       </div>
