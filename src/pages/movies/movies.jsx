@@ -1,24 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import CardCarousel from "../../components/card-list/card-list.component";
 
 import "./movies.styles.scss";
 import "../../styles/GlobalStyles.scss";
 
+import genres from "../../api/genres.json";
+
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-  const [genres, setGenres] = useState([
-    "fantasy",
-    "adventure",
-    "horror",
-    "family",
-    "action",
-    "drama",
-    "comedy",
-    "crime",
-    "war",
-    "romance",
-    "anime",
-  ]);
 
   const updateMovies = (newMovies) => {
     this.setMovies(newMovies);
@@ -45,6 +35,9 @@ const Movies = () => {
 
   return (
     <div className="container card-carousel">
+      <Link to="/movies/add" className="card-carousel__add-movie">
+        Add movie
+      </Link>
       {genres.map((genre) => (
         <div className="card-carousel__container">
           <div className="card-carousel__genre">

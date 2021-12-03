@@ -9,6 +9,7 @@ import Navbar from "./components/navbar/navbar.component";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
 import Movies from "./pages/movies/movies";
+import AddMovie from "./components/add-movie/add-movie.component";
 import CardDetails from "./components/card-details/card-details.component";
 import Employees from "./pages/employees/employees";
 import Home from "./pages/home/home";
@@ -41,6 +42,7 @@ const App = () => {
         />
         <Route path="/signup" element={<Signup />} />
         <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/add" element={<AddMovie />} />
         <Route path="/movies/:id" element={<CardDetails />} />
         <Route path="/employees" element={<Employees />} />
       </Routes>

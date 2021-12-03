@@ -13,7 +13,7 @@ const Navbar = ({ isAuth }) => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
-  console.log(isAuth.is);
+
   return (
     <header className="header">
       <div className="header__navbar">
@@ -32,20 +32,16 @@ const Navbar = ({ isAuth }) => {
               <FaIcons.FaTimes />
             </Link>
           </li>
-          {SidebarData.map((item, index) => {
-            return (
-              <>
-                {isAuth === item.isAuth || item.title == "Home" ? (
-                  <li key={index} className={item.cName}>
-                    <Link to={item.path} className="menu__link">
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                ) : (
-                  false
-                )}
-              </>
+          {SidebarData.map((item) => {
+            return isAuth === item.isAuth || item.title === "Home" ? (
+              <li key={item.title} className={item.cName}>
+                <Link to={item.path} className="menu__link">
+                  {item.icon}
+                  <span>{item.title}</span>
+                </Link>
+              </li>
+            ) : (
+              false
             );
           })}
           <li className="menu__text">

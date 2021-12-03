@@ -4,6 +4,8 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import FilledInput from "@mui/material/FilledInput";
 
+import movieAdd from "../../assets/movie-add.jpg";
+
 const Input = ({ value, onChange, id, endAdornment, type, placeholder }) => {
   return (
     <FormControl variant="filled" style={{ width: "100%" }}>

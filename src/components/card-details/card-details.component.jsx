@@ -18,7 +18,7 @@ const CardDetails = () => {
     movieDescription: "",
     movieRoomID: "",
     movieImage: "",
-    movieGenres: "",
+    movieGenres: [],
   });
 
   const showMovie = () => {
@@ -40,8 +40,6 @@ const CardDetails = () => {
 
   useEffect(showMovie, []);
 
-  console.log(movie.movieGenres);
-
   return (
     <div className="card-details">
       <div className="card-details__container container">
@@ -58,7 +56,11 @@ const CardDetails = () => {
               </div>
               <div className="card-details__descr">
                 <h2>Genre: </h2>
-                <p>{movie.movieGenres}</p>
+                <p>
+                  {movie.movieGenres.map((genre) => {
+                    return <span key={genre}>{genre} </span>;
+                  })}
+                </p>
               </div>
               <div className="card-details__descr">
                 <h2>Date: </h2>

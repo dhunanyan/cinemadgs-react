@@ -10,7 +10,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-import Logo from '../../assets/logo.png'
+import Logo from "../../assets/logo.png";
 
 import "./signup.styles.scss";
 
@@ -38,11 +38,11 @@ const Signup = () => {
   };
 
   const handleChangeFirstName = (event) => {
-    setName(event.target.value);
+    setFirstName(event.target.value);
   };
 
   const handleChangeLastName = (event) => {
-    setName(event.target.value);
+    setLastName(event.target.value);
   };
 
   const handleChange = (prop) => (event) => {
@@ -76,13 +76,15 @@ const Signup = () => {
             Sign up
           </button>
           <div className="signup__content">
-          <div className="signup__img"><img className="signup__logo" src={Logo} alt="Logo"/></div>
+            <div className="signup__img">
+              <img className="signup__logo" src={Logo} alt="Logo" />
+            </div>
             <p className="signup__descr descr">
               watch your favourite movies with us
             </p>
           </div>
           <div className="signup__inputs">
-            <FormControl variant="filled" style={{width: "100%"}}>
+            <FormControl variant="filled" style={{ width: "100%" }}>
               <InputLabel
                 style={{
                   color: "rgba(48, 48, 48, 0.486)",
@@ -104,7 +106,7 @@ const Signup = () => {
               />
             </FormControl>
 
-            <FormControl variant="filled" style={{width: "100%"}}>
+            <FormControl variant="filled" style={{ width: "100%" }}>
               <InputLabel
                 style={{
                   color: "rgba(48, 48, 48, 0.486)",
@@ -126,7 +128,7 @@ const Signup = () => {
               />
             </FormControl>
 
-            <FormControl variant="filled" style={{width: "100%"}}>
+            <FormControl variant="filled" style={{ width: "100%" }}>
               <InputLabel
                 style={{
                   color: "rgba(48, 48, 48, 0.486)",

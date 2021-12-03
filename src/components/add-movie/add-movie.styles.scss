@@ -1,0 +1,62 @@
+.signup {
+  &.movie-add {
+    background-image: url("../../assets/movie-add.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &__subcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(48, 48, 48, 0.7);
+  }
+
+  &__inputs {
+    overflow: hidden;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 400px;
+  }
+
+  &__input {
+    margin: 0 10px;
+  }
+
+  &__pic {
+    border: 1px solid rgba(48, 48, 48, 0.3);
+    font-size: 18px;
+    font-style: italic;
+    display: inline-block;
+    cursor: pointer;
+    margin: 5px 0;
+    width: calc(100% - 10px);
+    border-radius: 3px;
+    background-color: rgba(240, 235, 225, 0.603);
+    color: rgba(48, 48, 48, 0.486);
+    text-align: center;
+    transition: all 350ms ease-out;
+    transform: scale(1);
+
+    &:hover {
+      background-color: rgba(48, 48, 48, 1);
+      color: #ffcc57;
+      transform: scale(1.15);
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+  }
+}
