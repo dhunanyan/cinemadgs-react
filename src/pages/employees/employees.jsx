@@ -6,23 +6,20 @@ import "../../styles/GlobalStyles.scss";
 import "./employees.styles.scss";
 
 const Employees = () => {
-  const [state, setState] = useState({
-    employees: [],
-    positions: ["owner", "manager", "superviser", "cashier"],
-  });
+  const [employees, setEmployees] = useState([]);
+  const positions = ["owner", "manager", "superviser", "cashier"];
 
   const showEmployees = () => {
-    const url = "http://127.0.0.1:8000/employees";
+    const url = "/employees";
 
     const fetchData = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+          headers: { "Access-Control-Allow_Origin": "*" },
+        });
         const json = await response.json();
         console.log(json);
-        setState({
-          employees: json,
-          positions: ["owner", "manager", "superviser", "cashier"],
-        });
+        setEmployees(json);
       } catch (error) {
         console.log("error", error);
       }
@@ -36,13 +33,14 @@ const Employees = () => {
   return (
     <div className="eployees">
       <div className="container employees__container">
-        {state.positions.map((position, i) => (
+        {positions.map((position) => (
           <div
+            key={position}
             className={`employees__subcontainer employees__subcontainer--${position}`}
           >
             <EmployeesAccordion
               accordionPosition={position}
-              employees={state.employees}
+              employees={employees}
             />
           </div>
         ))}

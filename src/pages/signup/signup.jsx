@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-
+import axios from "axios";
 import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
 import IconButton from "@mui/material/IconButton";
 import FilledInput from "@mui/material/FilledInput";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -11,6 +9,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import Logo from "../../assets/logo.png";
+import Input from "../../components/input/input.component";
 
 import "./signup.styles.scss";
 
@@ -21,49 +20,78 @@ const FilledInputs = styled(FilledInput)({
 });
 
 const Signup = () => {
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false,
-  });
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [username, setName] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-  const [username, setName] = React.useState("");
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
-
-  const handleChangeUsername = (event) => {
+  const handleUsernameChange = (event) => {
     setName(event.target.value);
   };
 
-  const handleChangeFirstName = (event) => {
+  const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
   };
 
-  const handleChangeLastName = (event) => {
+  const handleLastNameChange = (event) => {
     setLastName(event.target.value);
   };
 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
+  const handlePassword1Change = (event) => {
+    setPassword1(event.target.value);
+    console.log(event.target.value);
+  };
+
+  const handlePassword2Change = (event) => {
+    setPassword2(event.target.value);
+    console.log(event.target.value);
   };
 
   const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
+    setShowPassword(!showPassword);
   };
-
+  //password or text
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
+  };
+
+  const handleSubmit = async (event) => {
+    const formData = new FormData();
+    console.log(event);
+    event.preventDefault();
+    formData.append("firstName", firstName);
+    formData.append("lastName", lastName);
+    formData.append("username", username);
+    formData.append("password1", password1);
+    formData.append("password2", password2);
+
+    try {
+      const response = await axios({
+        url: "https://cors-anywhere.herokuapp.com/http://127.0.0.1:8000/account/register",
+        method: "post",
+        data: formData,
+        headers: {
+          "Content-Type": "multipart/form-data",
+          // "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Methods": "POST",
+          // "Access-Control-Allow-Headers": "Content-Type",
+          // "Accec-Control-Allow-Credentials": "true",
+        },
+      });
+      const result = await response.json();
+      console.log("succes!!!!!:", JSON.stringify(result));
+    } catch (error) {
+      console.log("error!!!!!:", error);
+    }
   };
 
   return (
     <div className="signup signup--2">
       <div className="signup__container container">
         <Box
+          onSubmit={(e) => handleSubmit(e)}
           className="signup__subcontainer"
           component="form"
           sx={{
@@ -84,155 +112,79 @@ const Signup = () => {
             </p>
           </div>
           <div className="signup__inputs">
-            <FormControl variant="filled" style={{ width: "100%" }}>
-              <InputLabel
-                style={{
-                  color: "rgba(48, 48, 48, 0.486)",
-                }}
-                htmlFor="firstName"
-              >
-                First name
-              </InputLabel>
-              <FilledInput
-                style={{
-                  margin: "5px 0",
-                  width: "100%",
-                  color: "#303030",
-                  backgroundColor: "rgba(240, 235, 225, 0.603)",
-                }}
-                id="firstName"
-                value={firstName}
-                onChange={handleChangeFirstName}
-              />
-            </FormControl>
+            <Input
+              id="firstName"
+              value={firstName}
+              onChange={handleFirstNameChange}
+              placeholder="First Name"
+              name="first_name"
+            />
 
-            <FormControl variant="filled" style={{ width: "100%" }}>
-              <InputLabel
-                style={{
-                  color: "rgba(48, 48, 48, 0.486)",
-                }}
-                htmlFor="lastName"
-              >
-                Last name
-              </InputLabel>
-              <FilledInput
-                style={{
-                  margin: "5px 0",
-                  width: "100%",
-                  color: "#303030",
-                  backgroundColor: "rgba(240, 235, 225, 0.603)",
-                }}
-                id="lastName"
-                value={lastName}
-                onChange={handleChangeLastName}
-              />
-            </FormControl>
+            <Input
+              id="lastName"
+              value={lastName}
+              onChange={handleLastNameChange}
+              placeholder="Last Name"
+              name="last_name"
+            />
 
-            <FormControl variant="filled" style={{ width: "100%" }}>
-              <InputLabel
-                style={{
-                  color: "rgba(48, 48, 48, 0.486)",
-                }}
-                htmlFor="username"
-              >
-                Username
-              </InputLabel>
-              <FilledInput
-                style={{
-                  margin: "5px 0",
-                  width: "100%",
-                  color: "#303030",
-                  backgroundColor: "rgba(240, 235, 225, 0.603)",
-                }}
-                id="username"
-                value={username}
-                onChange={handleChangeUsername}
-              />
-            </FormControl>
+            <Input
+              id="username"
+              value={username}
+              onChange={handleUsernameChange}
+              placeholder="Username"
+              name="username"
+            />
 
-            <FormControl
-              sx={{ width: "100%", maxHeight: "100%" }}
-              variant="filled"
-            >
-              <InputLabel
-                style={{
-                  color: "rgba(48, 48, 48, 0.486)",
-                }}
-                htmlFor="password"
-              >
-                Password
-              </InputLabel>
-              <FilledInputs
-                style={{
-                  margin: "5px 0",
-                  width: "100%",
-                  color: "#303030",
-                  backgroundColor: "rgba(240, 235, 225, 0.603)",
-                }}
-                id="password"
-                type={values.showPassword ? "text" : "password"}
-                value={values.password}
-                onChange={handleChange("password")}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      style={{
-                        backgroundColor: "#ffcd57",
-                        right: "5px",
-                      }}
-                      aria-label="Password"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                      edge="end"
-                    >
-                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-              />
-            </FormControl>
+            <Input
+              id="password1"
+              value={password1}
+              onChange={handlePassword1Change}
+              placeholder="Password"
+              name="password1"
+              type={showPassword ? "text" : "password"}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    style={{
+                      backgroundColor: "#ffcd57",
+                      right: "5px",
+                    }}
+                    aria-label="Password"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
 
-            <FormControl
-              sx={{ width: "100%", maxHeight: "100%" }}
-              variant="filled"
-            >
-              <InputLabel
-                style={{
-                  color: "rgba(48, 48, 48, 0.486)",
-                }}
-                htmlFor="password"
-              >
-                Repeat password
-              </InputLabel>
-              <FilledInputs
-                style={{
-                  margin: "5px 0",
-                  width: "100%",
-                  color: "#303030",
-                  backgroundColor: "rgba(240, 235, 225, 0.603)",
-                }}
-                id="password"
-                type={values.showPassword ? "text" : "password"}
-                value={values.password}
-                onChange={handleChange("password")}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      style={{
-                        backgroundColor: "#ffcd57",
-                        right: "5px",
-                      }}
-                      aria-label="Password"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                      edge="end"
-                    >
-                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-              />
-            </FormControl>
+            <Input
+              id="password2"
+              value={password2}
+              onChange={handlePassword2Change}
+              placeholder="Repeat password"
+              name="password2"
+              type={showPassword ? "text" : "password"}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    style={{
+                      backgroundColor: "#ffcd57",
+                      right: "5px",
+                    }}
+                    aria-label="Password"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
           </div>
         </Box>
       </div>

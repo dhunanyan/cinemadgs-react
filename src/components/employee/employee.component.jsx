@@ -25,7 +25,7 @@ const EmployeesAccordion = ({ employees, accordionPosition }) => {
       {employees.map((employee, i) =>
         employee.employeePosition === accordionPosition ? (
           <div
-            key={i}
+            key={employees.employeeID}
             className={`employees__${employee.employeeUsername} employees__employee`}
           >
             <div className="employees__content" onClick={() => toggle(i)}>

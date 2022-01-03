@@ -32,7 +32,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <div>
       <Navbar isAuth={isAuth} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -46,8 +46,7 @@ const App = () => {
         <Route path="/movies/:id" element={<CardDetails />} />
         <Route path="/employees" element={<Employees />} />
       </Routes>
-    </>
+    </div>
   );
 };
-
 export default App;

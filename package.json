@@ -3,6 +3,7 @@
   "homepage": "https://dhunanyan.github.io/cinemadgs-react",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://127.0.0.1:8000",
   "dependencies": {
     "@date-io/date-fns": "1.x",
     "@emotion/react": "^11.6.0",
@@ -14,6 +15,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
     "date-fns": "^2.26.0",
     "gh-pages": "^3.2.3",
     "global": "^4.4.0",
